@@ -35,7 +35,10 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
     scroll-behavior: smooth;
 }
 
@@ -44,7 +47,6 @@ body {
     background-color: var(--primary-bg);
     color: var(--primary-text);
     line-height: 1.6;
-    overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -104,8 +106,6 @@ img {
 
 .section {
     padding: 100px 0;
-    /* Fixed navbar offset when jumping to section anchors (e.g. #reviews) */
-    scroll-margin-top: 120px;
 }
 
 /* Glassmorphism */
@@ -278,8 +278,7 @@ nav.scrolled {
 .mobile-menu {
     position: fixed;
     top: 0;
-    left: -100%;
-    right: auto;
+    right: -100%;
     width: 100%;
     height: 100vh;
     background: var(--primary-bg);
@@ -292,10 +291,12 @@ nav.scrolled {
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
+    visibility: hidden;
 }
 
 .mobile-menu.active {
-    left: 0;
+    right: 0;
+    visibility: visible;
 }
 
 .mobile-menu a {
@@ -422,6 +423,10 @@ nav.scrolled {
     box-shadow: var(--shadow);
 }
 
+.highlight-text {
+    text-align: center;
+}
+
 /* Style & Inspiration Redesign */
 .style-section {
     position: relative;
@@ -473,9 +478,11 @@ nav.scrolled {
 
 .style-accent-text {
     position: absolute;
-    top: -20px;
+    top: 0;
     left: 0;
-    font-size: 15rem;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1.5rem, 8vw, 12rem);
     font-weight: 900;
     opacity: 0.05;
     color: var(--primary-text);
@@ -501,10 +508,6 @@ nav.scrolled {
         width: 100%;
         margin-top: -100px;
         padding: 3rem;
-    }
-    
-    .style-accent-text {
-        font-size: 8rem;
     }
 }
 
@@ -679,22 +682,22 @@ nav.scrolled {
     opacity: 0;
 }
 
-.faq-item.open {
+.faq-item.active {
     border-color: var(--accent-color);
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
 
-.faq-item.open .faq-header {
+.faq-item.active .faq-header {
     background: rgba(212, 175, 55, 0.05);
 }
 
-.faq-item.open .faq-content {
+.faq-item.active .faq-content {
     max-height: 300px;
     padding: 0 2rem 2rem;
     opacity: 1;
 }
 
-.faq-item.open .faq-header i {
+.faq-item.active .faq-header i {
     transform: rotate(180deg);
 }
 
@@ -783,98 +786,6 @@ nav.scrolled {
 .auth-footer a {
     color: var(--accent-color);
     font-weight: 600;
-}
-
-/* Auth page extras (login/register) */
-.auth-row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0 0 1.5rem;
-}
-
-.auth-remember {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.95rem;
-    color: var(--secondary-text);
-    cursor: pointer;
-}
-
-.auth-remember input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--accent-color);
-}
-
-.auth-link {
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 0.95rem;
-    white-space: nowrap;
-}
-
-.auth-social {
-    margin-top: 1.5rem;
-}
-
-.auth-social-title {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-bottom: 1.1rem;
-}
-
-.auth-social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.auth-social-icons a {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--glass-border);
-    background: rgba(0, 0, 0, 0.03);
-    color: var(--primary-text);
-    transition: var(--transition);
-}
-
-.auth-social-icons a:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-.auth-terms-row {
-    width: 100%;
-    text-align: left;
-    margin: 0 0 1.5rem;
-}
-
-.auth-terms {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.7rem;
-    font-size: 0.95rem;
-    color: var(--secondary-text);
-    cursor: pointer;
-    line-height: 1.4;
-}
-
-.auth-terms input {
-    margin-top: 0.25rem;
-    width: 18px;
-    height: 18px;
-    accent-color: var(--accent-color);
 }
 
 .studio-container {
@@ -1166,9 +1077,9 @@ footer {
 
 .footer-social .social-icons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: nowrap; /* Keep Connect icons on a single line (desktop) */
+    gap: 1.5rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-social .social-icons a {
@@ -1221,44 +1132,15 @@ footer {
 /* Responsive Overrides */
 @media (max-width: 1024px) {
     .nav-container {
-        position: relative;
-        justify-content: center; /* Keep logo centered on tablet */
+        justify-content: space-between;
     }
 
-    /* Hide all navbar items except Login (keep it visible) */
-    .nav-links {
-        position: absolute;
-        right: 5.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-        gap: 0;
-        align-items: center;
+    .logo {
+        margin-right: auto;
     }
-    .nav-links li {
+
+    .nav-links, .nav-actions .toggle-btn {
         display: none;
-    }
-    .nav-links li.nav-login-item {
-        display: block;
-    }
-
-    .nav-links li.nav-login-item a {
-        display: inline-flex;
-        opacity: 1;
-    }
-    .nav-links a:not(.nav-login-btn) {
-        display: none;
-    }
-
-    .nav-actions .toggle-btn {
-        display: none;
-    }
-
-    .nav-actions {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        gap: 0;
     }
 
     .hamburger {
@@ -1266,25 +1148,53 @@ footer {
     }
 
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center; /* keep small headings centered on tablet */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo img {
+        margin: 0 auto 1.5rem;
+    }
+
+    .footer-brand p {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+
+    .highlight-container, 
+    .detail-card {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .detail-map {
+        grid-row: 1;
+    }
+
+    .detail-info {
+        grid-row: 2;
     }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem; /* prevent slight horizontal shifts */
-    }
-
-    .nav-links {
-        display: none; /* keep mobile navbar clean */
-    }
-
     footer {
         padding: 80px 0 40px;
     }
     
-    .footer-grid {
+    .footer-grid,
+    .featured-grid,
+    .process-steps,
+    .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 4rem;
         text-align: center;
@@ -1292,11 +1202,15 @@ footer {
     
     .footer-brand p {
         margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .footer-brand .logo img {
+        margin: 0 auto 1.5rem;
     }
     
     .footer-social .social-icons {
         justify-content: center;
-        flex-wrap: wrap;
     }
     
     .timeline::before {
@@ -1312,71 +1226,6 @@ footer {
     
     .gallery-grid {
         grid-template-columns: 1fr;
-    }
-
-    /* Fix “INSPIRATION” background word being clipped on mobile */
-    .style-accent-text {
-        left: 50%;
-        transform: translateX(-50%);
-        top: -5px;
-        font-size: 5.2rem;
-        line-height: 1;
-    }
-
-    /* Contact form: show clear input boxes on mobile */
-    .contact-card {
-        padding: 3rem 1.5rem;
-        max-width: 100%;
-    }
-
-    .contact-card .form-group {
-        margin-bottom: 2rem;
-    }
-
-    .contact-card input,
-    .contact-card textarea {
-        background: var(--secondary-bg) !important;
-        border: 1px solid var(--glass-border) !important;
-        border-bottom: 1px solid var(--glass-border) !important;
-        border-radius: 10px !important;
-        padding: 1rem !important;
-        font-size: 1rem !important;
-        text-align: left !important;
-    }
-
-    .contact-card input:focus,
-    .contact-card textarea:focus {
-        border-color: var(--accent-color) !important;
-        background: rgba(212, 175, 55, 0.05) !important;
-    }
-
-    .contact-card .btn {
-        padding: 1rem 2.5rem;
-        font-size: 1rem;
-        margin-top: 0;
-    }
-
-    /* Auth pages: tighten spacing on mobile */
-    .auth-card {
-        padding: 2.25rem 1.5rem;
-    }
-
-    .auth-card .form-group {
-        margin-bottom: 1.25rem;
-    }
-
-    .auth-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .auth-social-icons {
-        gap: 0.75rem;
-    }
-
-    .auth-link {
-        white-space: normal;
     }
 
     .mobile-actions {

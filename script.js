@@ -111,13 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
     faqItems.forEach(item => {
         const header = item.querySelector('.faq-header');
         header.addEventListener('click', () => {
-            // Use a dedicated class for accordion state to avoid clashing
-            // with the scroll-reveal animation's `.active` class.
-            const openItem = document.querySelector('.faq-item.open');
-            if (openItem && openItem !== item) {
-                openItem.classList.remove('open');
+            const activeItem = document.querySelector('.faq-item.active');
+            if (activeItem && activeItem !== item) {
+                activeItem.classList.remove('active');
             }
-            item.classList.toggle('open');
+            item.classList.toggle('active');
         });
     });
 
