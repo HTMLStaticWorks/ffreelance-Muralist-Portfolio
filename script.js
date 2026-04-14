@@ -57,14 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.overflow = '';
       });
     });
-    // Mobile services dropdown
-    const mobileDropToggle = mobileMenu.querySelector('.mobile-dropdown-toggle');
-    const mobileDropdown = mobileMenu.querySelector('.mobile-dropdown');
-    if (mobileDropToggle && mobileDropdown) {
-      mobileDropToggle.addEventListener('click', () => {
-        mobileDropdown.classList.toggle('open');
-      });
-    }
+    // Mobile dropdowns (Robust Event Delegation)
+    mobileMenu.addEventListener('click', (e) => {
+      const toggle = e.target.closest('.mobile-dropdown-toggle');
+      if (toggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = toggle.closest('.mobile-dropdown');
+        if (dropdown) {
+          dropdown.classList.toggle('open');
+        }
+      }
+    });
   }
 
   /* ======== NAVBAR ON SCROLL ======== */
@@ -143,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ======== SMOOTH SCROLL ======== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
