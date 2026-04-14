@@ -1,433 +1,284 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MURO | Freelance Muralist Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MURO | Freelance Muralist — Where Walls Become Worlds</title>
+  <meta name="description" content="MURO is a freelance muralist and public art portfolio — bespoke large-scale murals transforming spaces across 18 cities worldwide.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="dark">
-    <!-- Navigation -->
-    <nav class="glass">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="assets/images/logo.png" alt="MURO Logo">
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="#canvas">Canvas</a></li>
-                <li><a href="#portfolio">Mural Portfolio</a></li>
-                <li><a href="#about">About the Artist</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="login.html" class="btn btn-outline nav-login-btn">Login</a></li>
-            </ul>
 
-            <div class="nav-actions">
-                <button id="theme-toggle" class="toggle-btn" title="Toggle Dark/Light Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL Support">
-                    <i class="fas fa-language"></i>
-                </button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">MURO</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown"><a href="#">Home</a><div class="dropdown-menu"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Services</a>
+          <div class="dropdown-menu">
+            <a href="services-residential.html">Residential Murals</a>
+            <a href="services-commercial.html">Commercial Murals</a>
+            <a href="services-commissions.html">Custom Commissions</a>
+            <a href="services-restoration.html">Restoration</a>
+          </div>
+        </li>
+        <li><a href="project-spotlight.html">Project Spotlight</a></li>
+        <li><a href="canvas360.html">Canvas 360°</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="toggle-btn" data-toggle="rtl" title="Toggle RTL/LTR">
+          <svg class="icon-arrows" viewBox="0 0 24 24"><path d="M8 3L4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
+        </button>
+        <button class="toggle-btn" data-toggle="theme" title="Toggle Dark/Light Mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="nav-reach-btn">Reach Us</a>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <a href="#canvas">Canvas</a>
-        <a href="#portfolio">Mural Portfolio</a>
-        <a href="#about">About the Artist</a>
-        <a href="#contact">Contact</a>
-        <a href="#faq">FAQ</a>
-        <a href="login.html" class="btn btn-primary mobile-login-btn">Login</a>
-        
-        <div class="mobile-actions">
-            <button class="mobile-toggle-btn theme-toggle-mobile" title="Toggle Dark/Light Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="mobile-toggle-btn rtl-toggle-mobile" title="Toggle RTL Support">
-                <i class="fas fa-language"></i>
-            </button>
-        </div>
+      </div>
     </div>
+  </nav>
 
-    <main>
-        <!-- 1. Fullscreen Hero Section -->
-        <section id="canvas" class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content reveal">
-                <h1>Transforming Spaces <br><span>Into Stories</span></h1>
-                <p>Bespoke large-scale murals that breathe life into urban landscapes.</p>
-                <div class="centered-btn">
-                    <a href="#portfolio" class="btn btn-primary">Explore Gallery</a>
-                </div>
-            </div>
-        </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-dropdown"><button class="mobile-dropdown-toggle">Home ▾</button><div class="mobile-sub"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div></div>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-toggle">Services ▾</button>
+      <div class="mobile-sub">
+        <a href="services-residential.html">Residential Murals</a>
+        <a href="services-commercial.html">Commercial Murals</a>
+        <a href="services-commissions.html">Custom Commissions</a>
+        <a href="services-restoration.html">Restoration</a>
+      </div>
+    </div>
+    <a href="project-spotlight.html">Project Spotlight</a>
+    <a href="canvas360.html">Canvas 360°</a>
+    <a href="contact.html">Contact</a>
+    <div style="display:flex;gap:.8rem;margin-top:1rem">
+      <button class="toggle-btn" data-toggle="rtl" title="Toggle RTL/LTR">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M8 3L4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
+      </button>
+      <button class="toggle-btn" data-toggle="theme" title="Toggle Theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" style="display:none;width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:.5rem;width:80%">Reach Us</a>
+  </div>
 
-        <!-- 2. Featured Murals Preview -->
-        <section class="section featured-preview">
-            <div class="container">
-                <h2 class="reveal">Featured Work</h2>
-                <div class="featured-grid">
-                    <div class="mural-card reveal">
-                        <img src="assets/images/mural-1.png" alt="Mural 1">
-                        <div class="mural-info">
-                            <h3>Rise of the Phoenix</h3>
-                            <p>Urban Revitalization</p>
-                        </div>
-                    </div>
-                    <div class="mural-card reveal">
-                        <img src="assets/images/mural-2.png" alt="Mural 2">
-                        <div class="mural-info">
-                            <h3>Jungle Echoes</h3>
-                            <p>Architectural Statement</p>
-                        </div>
-                    </div>
-                    <div class="mural-card reveal">
-                        <img src="assets/images/mural-3.png" alt="Mural 3">
-                        <div class="mural-info">
-                            <h3>Geometric Vision</h3>
-                            <p>Minimalist Design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Artist Highlight Strip -->
-        <section class="artist-highlight glass section">
-            <div class="container highlight-container">
-                <div class="highlight-image reveal">
-                    <img src="assets/images/artist.png" alt="Artist Portrait">
-                </div>
-                <div class="highlight-text reveal">
-                    <span>The Visionary</span>
-                    <h2>Meet MURO</h2>
-                    <p>With over 10 years of experience painting walls across the globe, I specialize in creating immersive vertical experiences that challenge the boundary between art and architecture.</p>
-                    <div class="centered-btn">
-                        <a href="#about" class="btn btn-outline">Read My Story</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Portfolio Gallery Grid -->
-        <section id="portfolio" class="section gallery-section">
-            <div class="container">
-                <h2 class="reveal">Mural Portfolio</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item reveal"><img src="assets/images/mural-4.png" alt="Mural 4"></div>
-                    <div class="gallery-item reveal"><img src="assets/images/mural-5.png" alt="Mural 5"></div>
-                    <div class="gallery-item reveal"><img src="assets/images/mural-6.png" alt="Mural 6"></div>
-                    <div class="gallery-item reveal"><img src="assets/images/hero.png" alt="Hero Mural"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Project Details Section -->
-        <section class="section project-details">
-            <div class="container">
-                <h2 class="reveal">Project Spotlight</h2>
-                <div class="detail-card glass reveal">
-                    <div class="detail-info">
-                        <h3>Vibrant Soul Mural</h3>
-                        <p>Located in the heart of the arts district, this project aimed to represent the diversity and resilience of the community through bold colors and intricate floral motifs.</p>
-                        <ul class="project-meta">
-                            <li><strong>Location:</strong> City Center, NY</li>
-                            <li><strong>Completed:</strong> June 2025</li>
-                            <li><strong>Style:</strong> Urban Floral</li>
-                        </ul>
-                    </div>
-                    <div class="detail-map">
-                        <img src="assets/images/mural-4.png" alt="Project Detail">
-                        <div class="map-overlay">
-                            <span><i class="fas fa-map-marker-alt"></i> View on Map</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Creative Process Section -->
-        <section class="section process-section">
-            <div class="container">
-                <h2 class="reveal">Creative Process</h2>
-                <div class="process-steps">
-                    <div class="step reveal">
-                        <img src="assets/images/process-1.png" alt="Sketching">
-                        <div class="step-content">
-                            <span>01</span>
-                            <h3>Sketching & Concepts</h3>
-                            <p>Developing the visual narrative and scaling the design for the specific wall.</p>
-                        </div>
-                    </div>
-                    <div class="step reveal">
-                        <img src="assets/images/process-2.png" alt="Painting">
-                        <div class="step-content">
-                            <span>02</span>
-                            <h3>Execution & Flow</h3>
-                            <p>Layering colors and textures using premium industrial-grade paints.</p>
-                        </div>
-                    </div>
-                    <div class="step reveal">
-                        <img src="assets/images/process-3.png" alt="Final Result">
-                        <div class="step-content">
-                            <span>03</span>
-                            <h3>Final Unveiling</h3>
-                            <p>Adding the finishing touches and protective coats for longevity.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. Artist Bio Section -->
-        <section id="about" class="section bio-section">
-            <div class="container">
-                <div class="bio-content reveal">
-                    <h2>Artistic Journey</h2>
-                    <p>Every wall is a blank page. For me, painting is not just about decoration; it's about dialogue. I believe that public art has the power to transform neighborhoods and inspire conversations that wouldn't happen otherwise.</p>
-                    <p>Born in the streets and refined in the studio, my style is a blend of traditional fine art techniques and modern street art rebellion.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. Timeline / Journey -->
-        <section class="section timeline-section glass">
-            <div class="container">
-                <h2 class="reveal">Milestones</h2>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="date">2015</div>
-                        <div class="content">Started painting local rooftops.</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="date">2018</div>
-                        <div class="content">First international commission in Berlin.</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="date">2021</div>
-                        <div class="content">Won the "Urban Visionary" award.</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="date">2024</div>
-                        <div class="content">Completed the largest mural in the state.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. Style & Inspiration -->
-        <section class="section style-section">
-            <div class="style-accent-text">INSPIRATION</div>
-            <div class="style-container container">
-                <div class="style-visual reveal">
-                    <img src="assets/images/mural-6.png" alt="Inspiration">
-                </div>
-                <div class="inspiration-card glass reveal">
-                    <h2>Philosophy</h2>
-                    <h3>Color. Scale. Emotion.</h3>
-                    <p>I draw inspiration from the natural world's organic shapes and the city's rigid geometry. This contrast creates a tension that I explore in every stroke.</p>
-                    <p class="inspiration-quote">"Inspiration is everywhere, if you look at the mundane with artistic eyes."</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. Awards / Recognition / Clients -->
-        <section class="section awards-section">
-            <div class="container">
-                <h2 class="reveal">Trusted By</h2>
-                <div class="awards-grid">
-                    <div class="award-card glass reveal">
-                        <i class="fas fa-trophy"></i>
-                        <span>Best Urban Art 2023</span>
-                    </div>
-                    <div class="award-card glass reveal">
-                        <i class="fas fa-star"></i>
-                        <span>AIA Design Award</span>
-                    </div>
-                    <div class="award-card glass reveal">
-                        <i class="fas fa-building"></i>
-                        <span>Metropolis Inc.</span>
-                    </div>
-                    <div class="award-card glass reveal">
-                        <i class="fas fa-city"></i>
-                        <span>City Arts Council</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 11. Contact Form Section -->
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <h2 class="reveal">Let's Create Together</h2>
-                <div class="contact-card glass reveal">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Tell me about your project" rows="5" required></textarea>
-                        </div>
-                        <div class="centered-btn">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- 12. Studio / Location Section -->
-        <section class="section studio-section">
-            <div class="studio-bg"></div>
-            <div class="container studio-container reveal">
-                <div class="studio-card glass">
-                    <h2>The Studio</h2>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Artsy Lane, Creative Quarter, NY</p>
-                    <p><i class="fas fa-clock"></i> Mon - Fri: 9am - 6pm</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 13. FAQ Accordion Section -->
-        <section id="faq" class="section faq-section">
-            <div class="container">
-                <h2 class="reveal">Common Questions</h2>
-                <div class="faq-accordion">
-                    <div class="faq-item reveal">
-                        <div class="faq-header">
-                            <h3>How long does a mural take?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-content">
-                            <p>Depending on the scale and complexity, most murals take between 5 to 14 days to complete.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item reveal">
-                        <div class="faq-header">
-                            <h3>What materials do you use?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-content">
-                            <p>I use high-quality industrial spray paints and acrylics designed for longevity and UV protection.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item reveal">
-                        <div class="faq-header">
-                            <h3>Do you travel for projects?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-content">
-                            <p>Yes, I am available for projects worldwide. Travel costs are handled separately from commission fees.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 14. CTA Section -->
-        <section class="section cta-section glass">
-            <div class="container reveal">
-                <h2>Got a BIG idea?</h2>
-                <p>Let's turn that blank wall into a masterpiece.</p>
-                <div class="centered-btn">
-                    <a href="#contact" class="btn btn-primary">Start a Consultation</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Note: Sections 15 & 16 are separate pages (Login/Register) -->
-
-        <!-- 17. Testimonials Section -->
-        <section class="section testimonials-section">
-            <div class="container">
-                <h2 class="reveal">Client Feedback</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card glass reveal">
-                        <div class="client-img"><img src="assets/images/artist.png" alt="Client 1"></div>
-                        <p>"MURO transformed our office space into an inspiring environment. The attention to detail is unmatched."</p>
-                        <h4>- Sarah Jenkins, CEO</h4>
-                    </div>
-                    <div class="testimonial-card glass reveal">
-                        <div class="client-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3kMEdpKSvGLeCQxmQue0dNkTlLAWmJdv1Og&s" alt="David Chen" class="crop-top"></div>
-                        <p>"Professional, punctual, and profoundly talented. The mural has become a local landmark."</p>
-                        <h4>- David Chen, Gallery Owner</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 18. Social / Media Showcase -->
-        <section class="section social-section">
-            <div class="container">
-                <h2 class="reveal">Instagram Feed</h2>
-                <div class="social-grid">
-                    <div class="social-item reveal"><img src="assets/images/social-1.png" alt="Social 1"></div>
-                    <div class="social-item reveal"><img src="assets/images/social-2.png" alt="Social 2"></div>
-                    <div class="social-item reveal"><img src="assets/images/mural-2.png" alt="Social 3"></div>
-                    <div class="social-item reveal"><img src="assets/images/mural-5.png" alt="Social 4"></div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="MURO Logo">
-                </a>
-                <p>Transforming walls into powerful visual stories. Premium mural art for modern spaces with a focus on urban revitalization.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#portfolio">Mural Portfolio</a></li>
-                    <li><a href="#about">About the Artist</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-services">
-                <h4>Services</h4>
-                <ul>
-                    <li>Wall Murals</li>
-                    <li>Commercial Art</li>
-                    <li>Custom Design</li>
-                    <li>Street Art</li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" title="Behance"><i class="fab fa-behance"></i></a>
-                    <a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a>
-                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
+  <main>
+    <!-- 1. HERO SPLIT -->
+    <section class="hero-split">
+      <div class="hero-text container">
+        <h1 class="stagger-up">Where Walls<br>Become <span>Worlds</span></h1>
+        <p class="stagger-up">Bespoke large-scale murals that breathe life into urban landscapes — transforming blank concrete into immersive visual stories across 18 cities.</p>
+        <div class="hero-ctas stagger-up">
+          <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+          <a href="contact.html" class="btn btn-outline">Reach Us</a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 MURO Muralist Portfolio · Crafted with creativity 🎨</p>
-        </div>
-    </footer>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/hero.png" alt="Large-scale vibrant mural on urban building">
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- 2. STATS BAR -->
+    <section class="stats-bar">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-count="120" data-suffix="+">0</span>
+            <span class="stat-label">Murals Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="18">0</span>
+            <span class="stat-label">Cities</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="9" data-suffix=" Yrs">0</span>
+            <span class="stat-label">Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="40" data-suffix="+">0</span>
+            <span class="stat-label">Brand Collaborations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED WORK -->
+    <section class="section" id="featured">
+      <div class="container">
+        <h2 class="reveal">Featured Work</h2>
+        <div class="featured-grid">
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-1.png" alt="Rise of the Phoenix mural">
+            <div class="card-overlay"><h3>Rise of the Phoenix</h3><span class="tag">New York City</span></div>
+          </div>
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-2.png" alt="Jungle Echoes mural">
+            <div class="card-overlay"><h3>Jungle Echoes</h3><span class="tag">Berlin</span></div>
+          </div>
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-3.png" alt="Geometric Vision mural">
+            <div class="card-overlay"><h3>Geometric Vision</h3><span class="tag">Tokyo</span></div>
+          </div>
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-4.png" alt="Vibrant Soul mural">
+            <div class="card-overlay"><h3>Vibrant Soul</h3><span class="tag">Mumbai</span></div>
+          </div>
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-5.png" alt="Ocean Drift mural">
+            <div class="card-overlay"><h3>Ocean Drift</h3><span class="tag">Lisbon</span></div>
+          </div>
+          <div class="featured-card reveal">
+            <img src="assets/images/mural-6.png" alt="Urban Flora mural">
+            <div class="card-overlay"><h3>Urban Flora</h3><span class="tag">Melbourne</span></div>
+          </div>
+        </div>
+        <div class="centered-btn"><a href="portfolio.html" class="btn btn-outline">View All</a></div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 4. SERVICES PREVIEW -->
+    <section class="section" id="services-preview">
+      <div class="container">
+        <h2 class="reveal">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="svc-img"><img src="assets/images/svc-residential.png" alt="Residential Murals"></div>
+            <h3>Residential Murals</h3>
+            <p>Transform your living space with custom wall art that reflects your personality and inspires everyday life.</p>
+            <a href="services-residential.html" class="svc-link">Learn More →</a>
+          </div>
+          <div class="service-card reveal">
+            <div class="svc-img"><img src="assets/images/svc-commercial.png" alt="Commercial Murals"></div>
+            <h3>Commercial Murals</h3>
+            <p>Elevate your brand's environment with bold, large-scale murals that captivate clients and energize workspaces.</p>
+            <a href="services-commercial.html" class="svc-link">Learn More →</a>
+          </div>
+          <div class="service-card reveal">
+            <div class="svc-img"><img src="assets/images/svc-commissions.png" alt="Custom Commissions"></div>
+            <h3>Custom Commissions</h3>
+            <p>Collaborate one-on-one to create a completely bespoke artwork tailored to your vision and space.</p>
+            <a href="services-commissions.html" class="svc-link">Learn More →</a>
+          </div>
+          <div class="service-card reveal">
+            <div class="svc-img"><img src="assets/images/svc-restoration.png" alt="Restoration & Preservation"></div>
+            <h3>Restoration & Preservation</h3>
+            <p>Breathe new life into aging murals with expert restoration that honors the original artistry.</p>
+            <a href="services-restoration.html" class="svc-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 5. TESTIMONIALS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Client Feedback</h2>
+        <div class="testimonials-scroll">
+          <div class="testimonial-card reveal">
+            <div class="client-photo"><img src="assets/images/artist.png" alt="Sarah Jenkins"></div>
+            <blockquote>"MURO transformed our office space into an inspiring environment. The attention to detail is unmatched — every visitor."</blockquote>
+            <div class="client-name">Sarah Jenkins</div>
+            <div class="client-co">CEO, Urban Collective</div>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="client-photo"><img src="assets/images/process-1.png" alt="David Chen" style="object-position:top"></div>
+            <blockquote>"Professional, punctual, and profoundly talented. The mural has become a local landmark — people travel to see it."</blockquote>
+            <div class="client-name">David Chen</div>
+            <div class="client-co">Gallery Owner, Arthaus</div>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="client-photo"><img src="assets/images/process-2.png" alt="Priya Mehta" style="object-position:center"></div>
+            <blockquote>"Working with MURO was collaborative and seamless. They truly listened to our vision and amplified it beyond expectations."</blockquote>
+            <div class="client-name">Priya Mehta</div>
+            <div class="client-co">Director, Bloom Hotels</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 6. INSTAGRAM STRIP -->
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Follow the Process</h2>
+        <div class="insta-grid">
+          <img src="assets/images/mural-1.png" alt="Process shot 1" class="reveal">
+          <img src="assets/images/social-1.png" alt="Process shot 2" class="reveal">
+          <img src="assets/images/mural-3.png" alt="Process shot 3" class="reveal">
+          <img src="assets/images/process-1.png" alt="Process shot 4" class="reveal">
+          <img src="assets/images/social-2.png" alt="Process shot 5" class="reveal">
+          <img src="assets/images/mural-5.png" alt="Process shot 6" class="reveal">
+        </div>
+        <p class="insta-caption">@muro.art</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">MURO</span>
+        <p>Transforming walls into powerful visual stories. Premium mural art for modern spaces with a focus on urban revitalization and community expression.</p>
+        <div class="footer-social-icons">
+          <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" title="Behance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12h6l2-4-2-4H1z"/><path d="M1 20h7l2-4-2-4H1z"/><path d="M15 4h6"/><circle cx="18" cy="14" r="4"/></svg></a>
+          <a href="#" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" title="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/><path d="M9 18l1.5-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li class="nav-dropdown"><a href="#">Home</a><div class="dropdown-menu"><a href="index.html">Home 1</a><a href="home2.html">Home 2</a></div></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services-residential.html">Residential Murals</a></li>
+          <li><a href="services-commercial.html">Commercial Murals</a></li>
+          <li><a href="services-commissions.html">Custom Commissions</a></li>
+          <li><a href="services-restoration.html">Restoration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">📍 123 Artsy Lane, Creative Quarter, Mumbai, India</div>
+        <div class="footer-contact-item">📞 +91 98765 43210</div>
+        <div class="footer-contact-item">📧 studio@muro.art</div>
+        <div class="footer-contact-item">🕐 Mon–Fri 9AM–7PM · Sat 10AM–5PM</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MURO. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" title="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <script src="script.js"></script>
 </body>
 </html>
